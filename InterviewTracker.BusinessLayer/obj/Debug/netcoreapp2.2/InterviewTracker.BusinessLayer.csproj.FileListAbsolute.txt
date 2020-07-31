@@ -1,0 +1,56 @@
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.deps.json
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.dll
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.dll
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.pdb
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.pdb
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csprojAssemblyReference.cache
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfoInputs.cache
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfo.cs
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CopyComplete
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Task_3\Project\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.deps.json
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.dll
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.dll
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.pdb
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.pdb
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csprojAssemblyReference.cache
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfoInputs.cache
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfo.cs
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CopyComplete
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Task_3_4\Project-InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.deps.json
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.dll
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.dll
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.pdb
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.pdb
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csprojAssemblyReference.cache
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfoInputs.cache
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfo.cs
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CopyComplete
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Case Study\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.deps.json
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.dll
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.dll
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.DataLayer.pdb
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\bin\Debug\netcoreapp2.2\InterviewTracker.Entities.pdb
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csprojAssemblyReference.cache
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfoInputs.cache
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.AssemblyInfo.cs
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.csproj.CopyComplete
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.dll
+D:\IIHT\Code_Clean\Inteview_Tracker_Project_InMemory\InterviewTracker.BusinessLayer\obj\Debug\netcoreapp2.2\InterviewTracker.BusinessLayer.pdb

@@ -1,0 +1,5 @@
+D:\IIHT\Task_3\Project\InterviewTracker.DataLayer\bin\Debug\netcoreapp3.1\InterviewTracker.DataLayer.deps.json
+D:\IIHT\Task_3\Project\InterviewTracker.DataLayer\bin\Debug\netcoreapp3.1\InterviewTracker.DataLayer.dll
+D:\IIHT\Task_3\Project\InterviewTracker.DataLayer\obj\Debug\netcoreapp3.1\InterviewTracker.DataLayer.csprojAssemblyReference.cache
+D:\IIHT\Task_3\Project\InterviewTracker.DataLayer\obj\Debug\netcoreapp3.1\InterviewTracker.DataLayer.AssemblyInfoInputs.cache
+D:\IIHT\Task_3\Project\InterviewTracker.DataLayer\obj\Debug\netcoreapp3.1\InterviewTracker.DataLayer.AssemblyInfo.cs
