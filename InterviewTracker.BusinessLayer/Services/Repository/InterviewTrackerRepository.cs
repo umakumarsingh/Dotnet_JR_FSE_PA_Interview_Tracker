@@ -1,10 +1,8 @@
 ﻿using InterviewTracker.DataLayer;
 using InterviewTracker.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InterviewTracker.BusinessLayer.Services.Repository
@@ -56,6 +54,7 @@ namespace InterviewTracker.BusinessLayer.Services.Repository
         {
             var interview = await _interviewDb.Interviews.
                 OrderByDescending(x => x.InterviewDate).ToListAsync();
+                //OrderBy(x => x.InterviewDate).ThenByDescending(x => x.InterviewName).ToListAsync();
             return interview;
         }
         /// <summary>

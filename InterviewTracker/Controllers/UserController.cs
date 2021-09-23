@@ -26,8 +26,8 @@ namespace InterviewTracker.Controllers
         /// <returns></returns>
         public async Task<IActionResult> AllUser()
         {
-            //Do Code here
-            return View();
+            IEnumerable<ApplicationUser> appUser = await _interviewTrackerRepository.GetAllUser();
+            return View(appUser);
         }
         /// <summary>
         /// Register New User
@@ -45,7 +45,21 @@ namespace InterviewTracker.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterUser(RegisterViewModel model)
         {
-            //Do Code here
+            if(ModelState.IsValid)
+            {
+                ApplicationUser newUser = new ApplicationUser
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+                    ReportingTo = model.ReportingTo,
+                    UserTypes = model.UserTypes,
+                    Stat = model.Stat,
+                    MobileNumber = model.MobileNumber
+                };
+                await _interviewTrackerRepository.Register(newUser);
+                return RedirectToAction("AllUser", new { UserId = newUser.UserId });//send action to all user list after data save
+            }
             return View();
         }
         /// <summary>
@@ -56,8 +70,25 @@ namespace InterviewTracker.Controllers
         [HttpGet]
         public IActionResult EditUser(int UserId)
         {
-            //Do Code here
-            return View();
+            ApplicationUser user = _interviewTrackerRepository.GetUserById(UserId);
+            if (user == null)
+            {
+                Response.StatusCode = 404;
+                return View("EmployeeNotFound", UserId);
+            }
+
+            UserEditViewModel newUser = new UserEditViewModel
+            {
+                    UserId = user.UserId,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    ReportingTo = user.ReportingTo,
+                    UserTypes = user.UserTypes,
+                    Stat = user.Stat,
+                    MobileNumber = user.MobileNumber
+                };
+            return View(newUser);
         }
         /// <summary>
         /// Edit user after load User on edit mode
@@ -67,7 +98,19 @@ namespace InterviewTracker.Controllers
         [HttpPost]
         public async Task<IActionResult> EditUser(UserEditViewModel model)
         {
-            //Do Code here
+            if (ModelState.IsValid)
+            {
+                ApplicationUser appUser = _interviewTrackerRepository.GetUserById(model.UserId);
+                appUser.FirstName = model.FirstName;
+                appUser.LastName = model.LastName;
+                appUser.Email = model.Email;
+                appUser.ReportingTo = model.ReportingTo;
+                appUser.UserTypes = model.UserTypes;
+                appUser.Stat = model.Stat;
+                appUser.MobileNumber = model.MobileNumber;
+                await _interviewTrackerRepository.UpdateUser(appUser);
+                return RedirectToAction("AllUser");
+            }
             return View();
         }
         /// <summary>
@@ -78,8 +121,8 @@ namespace InterviewTracker.Controllers
         [HttpGet]
         public IActionResult DeleteUser(int UserId)
         {
-            //Do Code here
-            return View();
+            var user = _interviewTrackerRepository.GetUserById(UserId);
+            return View(user);
         }
         /// <summary>
         /// Display confirmation message to delete User
@@ -90,8 +133,8 @@ namespace InterviewTracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteUserConfirmed(int UserId)
         {
-            //Do Code here
-            return View();
+            await _interviewTrackerRepository.DeleteUserById(UserId);
+            return RedirectToAction("AllUser");
         }
     }
 }

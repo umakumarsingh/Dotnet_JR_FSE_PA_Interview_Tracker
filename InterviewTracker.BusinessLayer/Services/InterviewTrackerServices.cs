@@ -11,81 +11,80 @@ namespace InterviewTracker.BusinessLayer.Services
     public class InterviewTrackerServices : IInterviewTrackerServices
     {
         /// <summary>
-        /// Creating Referance variable of IInterviewTrackerRepository
-        /// Injecting in InterviewTrackerServices constructor
+        /// creating referance variable of IInterviewTrackerRepository -
+        /// and injecting in InterviewTrackerServices controller
         /// </summary>
         private readonly IInterviewTrackerRepository _interviewTR;
-
         public InterviewTrackerServices(IInterviewTrackerRepository interviewTrackerRepository)
         {
             _interviewTR = interviewTrackerRepository;
         }
         /// <summary>
-        /// Add New Interview in InMemoryDb calling by InterviewTrackerRepository method
+        /// Add a new interview in database with providing all details.
         /// </summary>
         /// <param name="interview"></param>
         /// <returns></returns>
         public async Task<Interview> AddInterview(Interview interview)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Delete a interview form InMemoryDb
+        /// Delete an existing interview by interview Id
         /// </summary>
         /// <param name="interviewId"></param>
         /// <returns></returns>
         public async Task<bool> DeleteInterviewById(int interviewId)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Get all Interview from InMemoryDb
+        /// Get all interview and show on main page or dashboard controller
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<Interview>> GetAllInterview()
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// get a interview by interviewId
+        /// Get a single interview details by interviewId
         /// </summary>
         /// <param name="interviewId"></param>
         /// <returns></returns>
         public Interview GetInterviewrById(int interviewId)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Get interview By Interview name or Interviewer Name 
+        /// Find an existing interview by interviewer name and Interview name
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
         public async Task<IEnumerable<Interview>> InterviewByName(string name)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Get total count of inteview in InMemoryDb
+        /// Get the total count of interview
         /// </summary>
         /// <returns></returns>
         public int TotalCount()
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Update Interview in InMemoryDb
+        /// Update an existing interview
         /// </summary>
         /// <param name="interview"></param>
         /// <returns></returns>
         public async Task<Interview> UpdateInterview(Interview interview)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
     }

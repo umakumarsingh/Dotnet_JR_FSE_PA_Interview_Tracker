@@ -30,8 +30,11 @@ namespace InterviewTracker.Controllers
         [HttpGet]
         public IActionResult AddNewInterview()
         {
-            //Do Code here
-            return View();
+            var viewModel = new AddInterviewViewModel
+            {
+                ApplicationUsers = _userTR.User()
+            };
+            return View(viewModel);
         }
         /// <summary>
         /// Post method of AddNewInterview after AddNewInterview page is added.
@@ -41,7 +44,23 @@ namespace InterviewTracker.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNewInterview(AddInterviewViewModel model)
         {
-            //Do Code here
+            if(ModelState.IsValid)
+            {
+                Interview newInterview = new Interview
+                {
+                    InterviewName = model.InterviewName,
+                    Interviewer = model.Interviewer,
+                    InterviewUser = model.InterviewUser,
+                    UserSkills = model.UserSkills,
+                    InterviewDate = model.InterviewDate,
+                    InterviewTime = model.InterviewTime,
+                    InterViewsStatus = model.InterViewsStatus,
+                    TInterViews = model.TInterViews
+                };
+                await _interview.AddInterview(newInterview);
+                ViewBag.UserId = new SelectList(_userTR.User(), "UserId", "FirstName", model.UserId);
+                return RedirectToAction("AllInterviewAsync", "Dashboard", new { InterviewId = newInterview.InterviewId });
+            }
             return View();
         }
     }

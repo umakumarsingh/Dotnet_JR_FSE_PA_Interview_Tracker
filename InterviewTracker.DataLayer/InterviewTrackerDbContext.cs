@@ -11,7 +11,7 @@ namespace InterviewTracker.DataLayer
         public InterviewTrackerDbContext(DbContextOptions<InterviewTrackerDbContext> dbContextOptions)
             : base(dbContextOptions)
         { 
-            Database.Migrate(); 
+            //Database.Migrate();
         }
 
         /// <summary>

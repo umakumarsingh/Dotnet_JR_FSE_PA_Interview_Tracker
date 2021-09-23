@@ -11,71 +11,70 @@ namespace InterviewTracker.BusinessLayer.Services
     public class UserInterviewTrackerServices : IUserInterviewTrackerServices
     {
         /// <summary>
-        /// Creating Referance variable of IUserInterviewTrackerRepository
-        /// Injecting in UserInterviewTrackerServices constructor
+        /// creating referance variable of IUserInterviewTrackerRepository -
+        /// and injecting in UserInterviewTrackerServices controller
         /// </summary>
         private readonly IUserInterviewTrackerRepository _interviewTR;
-
         public UserInterviewTrackerServices(IUserInterviewTrackerRepository interviewTrackerRepository)
         {
             _interviewTR = interviewTrackerRepository;
         }
         /// <summary>
-        /// Delete a user from InMemoryDb
+        /// Delete an existing user from Db by User Id.
         /// </summary>
         /// <param name="UserId"></param>
         /// <returns></returns>
         public async Task<bool> DeleteUserById(int UserId)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// get All user from InMemoryDb
+        /// Get all registred user from Db and show using controller
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<ApplicationUser>> GetAllUser()
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// get a user by userid
+        /// Get a single user details by UserId
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
         public ApplicationUser GetUserById(int userId)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Register a new User in InMemoryDb
+        /// Register an new user as interviewer or interview
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
         public async Task<ApplicationUser> Register(ApplicationUser user)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Update a existing user
+        /// Update an existing user
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
         public async Task<ApplicationUser> UpdateUser(ApplicationUser user)
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
-        /// get a user
+        /// Get the list of user to show as dropdownlist on various place as GUI
         /// </summary>
         /// <returns></returns>
         public IEnumerable<ApplicationUser> User()
         {
-            //Do code here
+            //do code here
             throw new NotImplementedException();
         }
     }

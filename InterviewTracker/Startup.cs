@@ -42,7 +42,6 @@ namespace InterviewTracker
             services.AddPaging();
             //To Use InMemory Db
             services.AddDbContext<InterviewTrackerDbContext>(options => options.UseInMemoryDatabase("InterviewTracker"));
-            //services.AddDbContext<InterviewTrackerDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SpringMvcAppConn")));
             //Injecting Services and Repository
             services.AddScoped<IUserInterviewTrackerRepository, UserInterviewTrackerRepository>();
             services.AddScoped<IUserInterviewTrackerServices, UserInterviewTrackerServices>();

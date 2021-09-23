@@ -4,12 +4,10 @@ using InterviewTracker.BusinessLayer.Services.Repository;
 using InterviewTracker.Entities;
 using Moq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace InterviewTracker.Tests.TestCases
 {
@@ -18,6 +16,7 @@ namespace InterviewTracker.Tests.TestCases
         /// <summary>
         /// Creating Referance of all Service Interfaces and Mocking All Repository
         /// </summary>
+        private readonly ITestOutputHelper _output;
         private readonly IInterviewTrackerServices _interviewTS;
         private readonly IUserInterviewTrackerServices _interviewUserTS;
         public readonly Mock<IInterviewTrackerRepository> service = new Mock<IInterviewTrackerRepository>();
@@ -27,8 +26,9 @@ namespace InterviewTracker.Tests.TestCases
         /// <summary>
         /// Injecting service object into Test class constructor
         /// </summary>
-        public FuctionalTests()
+        public FuctionalTests(ITestOutputHelper output)
         {
+            _output = output;
             _interviewTS = new InterviewTrackerServices(service.Object);
             _interviewUserTS = new UserInterviewTrackerServices(serviceUser.Object);
             _user = new ApplicationUser()
@@ -85,15 +85,36 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             bool res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Act
-            serviceUser.Setup(repo => repo.Register(_user)).ReturnsAsync(_user);
-            var result = await _interviewUserTS.Register(_user);
-            if (result != null)
+            try
             {
-                res = true;
+                serviceUser.Setup(repo => repo.Register(_user)).ReturnsAsync(_user);
+                var result = await _interviewUserTS.Register(_user);
+                if (result != null)
+                {
+                    res = true;
+                }
             }
-            //Asert
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_Validate_ValidUserRegister=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_Validate_ValidUserRegister=" + res + "\n");
             return res;
         }
@@ -106,16 +127,36 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            serviceUser.Setup(repos => repos.GetAllUser());
-            var result = await _interviewUserTS.GetAllUser();
-            //Assertion
-            if (result !=null)
+            try
             {
-                res = true;
+                serviceUser.Setup(repos => repos.GetAllUser());
+                var result = await _interviewUserTS.GetAllUser();
+                if (result != null)
+                {
+                    res = true;
+                }
+            }
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_GetAllUser=" + res + "\n");
+                return false;
             }
             //Assert
-            //final result displaying in text file
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_GetAllUser=" + res + "\n");
             return res;
         }
@@ -128,16 +169,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            serviceUser.Setup(repos => repos.User());
-            var result = _interviewUserTS.User();
-            //Assertion
-            if (result != null)
+            try
             {
-                res = true;
+                serviceUser.Setup(repos => repos.User());
+                var result = _interviewUserTS.User();
+                //Assertion
+                if (result != null)
+                {
+                    res = true;
+                }
+            }
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_GetUser=" + res + "\n");
+                return false;
             }
             //Assert
-            //final result displaying in text file
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_GetUser=" + res + "\n");
             return res;
         }
@@ -150,16 +212,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            serviceUser.Setup(repos => repos.GetUserById(_user.UserId)).Returns(_user);
-            var result = _interviewUserTS.GetUserById(_user.UserId);
-            //Assertion
-            if (result != null)
+            try
             {
-                res = true;
+                serviceUser.Setup(repos => repos.GetUserById(_user.UserId)).Returns(_user);
+                var result = _interviewUserTS.GetUserById(_user.UserId);
+                //Assertion
+                if (result != null)
+                {
+                    res = true;
+                }
+            }
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_GetUserById=" + res + "\n");
+                return false;
             }
             //Assert
-            //final result displaying in text file
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_GetUserById=" + res + "\n");
             return res;
         }
@@ -172,16 +255,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            serviceUser.Setup(repos => repos.UpdateUser(_user)).ReturnsAsync(_user);
-            var result = await _interviewUserTS.UpdateUser(_user);
-            //Assertion
-            if (result == _user)
+            try
             {
-                res = true;
+                serviceUser.Setup(repos => repos.UpdateUser(_user)).ReturnsAsync(_user);
+                var result = await _interviewUserTS.UpdateUser(_user);
+                //Assertion
+                if (result == _user)
+                {
+                    res = true;
+                }
+            }
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_UpdateUser=" + res + "\n");
+                return false;
             }
             //Assert
-            //final result displaying in text file
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_UpdateUser=" + res + "\n");
             return res;
         }
@@ -194,23 +298,43 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             var _user = new ApplicationUser()
             {
                 UserId = 5
             };
             //Action
-            serviceUser.Setup(repos => repos.DeleteUserById(_user.UserId)).ReturnsAsync(true);
-            var result = await _interviewUserTS.DeleteUserById(_user.UserId);
-            if (result == true)
+            try
             {
-                res = true;
+                serviceUser.Setup(repos => repos.DeleteUserById(_user.UserId)).ReturnsAsync(true);
+                var result = await _interviewUserTS.DeleteUserById(_user.UserId);
+                if (result == true)
+                {
+                    res = true;
+                }
+            }
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_DeleteUser=" + res + "\n");
+                return false;
             }
             //Assert
-            //final result displaying in text file
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_DeleteUser=" + res + "\n");
             return res;
         }
-
         /// <summary>
         /// Interview Part Test
         /// Testfor_Validate_Valid_AddInterview is used to test to add a valid Interview
@@ -221,15 +345,36 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             bool res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Act
-            service.Setup(repo => repo.AddInterview(_interview)).ReturnsAsync(_interview);
-            var result = await _interviewTS.AddInterview(_interview);
-            if (result != null)
+            try
             {
-                res = true;
+                service.Setup(repo => repo.AddInterview(_interview)).ReturnsAsync(_interview);
+                var result = await _interviewTS.AddInterview(_interview);
+                if (result != null)
+                {
+                    res = true;
+                }
             }
-            //Asert
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_Validate_Valid_AddInterview=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "Testfor_Validate_Valid_AddInterview=" + res + "\n");
             return res;
         }
@@ -242,15 +387,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            service.Setup(repos => repos.GetAllInterview());
-            var result = await _interviewTS.GetAllInterview();
-            //Assertion
-            if (result != null)
+            try
             {
-                res = true;
+                service.Setup(repos => repos.GetAllInterview());
+                var result = await _interviewTS.GetAllInterview();
+                //Assertion
+                if (result != null)
+                {
+                    res = true;
+                }
             }
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetAllInterview=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetAllInterview=" + res + "\n");
             return res;
         }
@@ -263,15 +430,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            service.Setup(repos => repos.GetInterviewrById(_interview.InterviewId)).Returns(_interview);
-            var result = _interviewTS.GetInterviewrById(_interview.InterviewId);
-            //Assertion
-            if (result != null)
+            try
             {
-                res = true;
+                service.Setup(repos => repos.GetInterviewrById(_interview.InterviewId)).Returns(_interview);
+                var result = _interviewTS.GetInterviewrById(_interview.InterviewId);
+                //Assertion
+                if (result != null)
+                {
+                    res = true;
+                }
             }
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetInterviewById=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetInterviewById=" + res + "\n");
             return res;
         }
@@ -284,15 +473,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            service.Setup(repos => repos.UpdateInterview(_interview)).ReturnsAsync(_interview);
-            var result = await _interviewTS.UpdateInterview(_interview);
-            //Assertion
-            if (result == _interview)
+            try
             {
-                res = true;
+                service.Setup(repos => repos.UpdateInterview(_interview)).ReturnsAsync(_interview);
+                var result = await _interviewTS.UpdateInterview(_interview);
+                //Assertion
+                if (result == _interview)
+                {
+                    res = true;
+                }
             }
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_UpdateInterview=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_UpdateInterview=" + res + "\n");
             return res;
         }
@@ -305,15 +516,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            service.Setup(repos => repos.DeleteInterviewById(_interview.InterviewId)).ReturnsAsync(true);
-            var result = await _interviewTS.DeleteInterviewById(_interview.InterviewId);
-            //Assertion
-            if (result == true)
+            try
             {
-                res = true;
+                service.Setup(repos => repos.DeleteInterviewById(_interview.InterviewId)).ReturnsAsync(true);
+                var result = await _interviewTS.DeleteInterviewById(_interview.InterviewId);
+                //Assertion
+                if (result == true)
+                {
+                    res = true;
+                }
             }
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_DeleteInterview=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_DeleteInterview=" + res + "\n");
             return res;
         }
@@ -327,15 +560,37 @@ namespace InterviewTracker.Tests.TestCases
             //Arrange
             var res = false;
             int val = 0;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            service.Setup(repos => repos.TotalCount());
-            var result = _interviewTS.TotalCount();
-            //Assertion
-            if (result >= val)
+            try
             {
-                res = true;
+                service.Setup(repos => repos.TotalCount());
+                var result = _interviewTS.TotalCount();
+                //Assertion
+                if (result >= val)
+                {
+                    res = true;
+                }
             }
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_CountInterview=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_CountInterview=" + res + "\n");
             return res;
         }
@@ -348,15 +603,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            service.Setup(repos => repos.InterviewByName(_interview.InterviewName));
-            var result = await _interviewTS.InterviewByName(_interview.InterviewName);
-            //Assertion
-            if (result != null)
+            try
             {
-                res = true;
+                service.Setup(repos => repos.InterviewByName(_interview.InterviewName));
+                var result = await _interviewTS.InterviewByName(_interview.InterviewName);
+                //Assertion
+                if (result != null)
+                {
+                    res = true;
+                }
             }
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetInterviewByName=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetInterviewByName=" + res + "\n");
             return res;
         }
@@ -369,15 +646,37 @@ namespace InterviewTracker.Tests.TestCases
         {
             //Arrange
             var res = false;
+            string testName;
+            testName = TestUtils.GetCurrentMethodName();
             //Action
-            service.Setup(repos => repos.InterviewByName(_interview.Interviewer));
-            var result = await _interviewTS.InterviewByName(_interview.Interviewer);
-            //Assertion
-            if (result != null)
+            try
             {
-                res = true;
+                service.Setup(repos => repos.InterviewByName(_interview.Interviewer));
+                var result = await _interviewTS.InterviewByName(_interview.Interviewer);
+                //Assertion
+                if (result != null)
+                {
+                    res = true;
+                }
             }
-            //final result displaying in text file
+            catch(Exception)
+            {
+                //Assert
+                //final result save in text file if exception raised
+                _output.WriteLine(testName + ":Failed");
+                await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetInterviewByInterviewerName=" + res + "\n");
+                return false;
+            }
+            //Assert
+            //final result save in text file, Call rest API to save test result
+            if (res == true)
+            {
+                _output.WriteLine(testName + ":Passed");
+            }
+            else
+            {
+                _output.WriteLine(testName + ":Failed");
+            }
             await File.AppendAllTextAsync("../../../../output_revised.txt", "TestFor_GetInterviewByInterviewerName=" + res + "\n");
             return res;
         }
